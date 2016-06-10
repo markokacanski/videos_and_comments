@@ -5,11 +5,18 @@ class VideoTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  test "videos have a title description and view count" do
-    vid = Video.new
+  def setup
+    @video = Video.new
+  end
 
-    assert_respond_to vid, :title, "video has no title"
-    assert_respond_to vid, :view_count, "video has no view count"
-    assert_respond_to vid, :description, "video has no description"
+  test "video has a title description and view count" do  
+    assert_respond_to @video, :title, "video has no title"
+    assert_respond_to @video, :view_count, "video has no view count"
+    assert_respond_to @video, :description, "video has no description"
+  end
+
+  test "video has a video file" do
+    assert_respond_to @video, :video_file, "video has no file"
+    assert (@video.video_file.kind_of? Paperclip::Attachment), "video file is not a paperclip attachment"
   end
 end
