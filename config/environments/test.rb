@@ -41,4 +41,5 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.paperclip_path = ":rails_root/public/system/uploads/TEST/:class/:attachment/:id_partition/:style/:filename"
+  config.paperclip_url ="/system/uploads/TEST/:class/:attachment/:id_partition/:style/:filename"
 end
