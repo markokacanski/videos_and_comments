@@ -1,5 +1,5 @@
 <h1>list of videos</h1>
 
 <% @videos.each do |video| %>
-  <%= link_to video.title, video_view_path(video.id) %>
+  <%= link_to image_tag(video.video_file.url(:thumbnail)), video_view_path(video.id) %>
 <% end %>

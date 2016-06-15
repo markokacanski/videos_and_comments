@@ -34,6 +34,26 @@ class VideoTest < ActiveSupport::TestCase
     refute @video.valid?, "video without a proper video file should not be valid"
   end
 
+  test "video has a thumbnail" do
+    name = false
+    style_format = false
+
+    @video.video_file.styles.values.each do |style|
+      #note that style name and format are kept as symbols
+      if style.name == :thumbnail
+        name = true
+        if style.format == :png
+          style_format = true
+        end;
+      end;
+    end
+    
+    assert name, "there is no style named thumbnail"
+    if name
+      assert style_format, "the thumbnail is not a .png image"
+    end
+  end
+
 private
   def test_file(args)
     test_file = Rails.root.join('test','fixtures', args.fetch(:filename, "")).to_s 
