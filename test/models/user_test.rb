@@ -5,11 +5,12 @@ class UserTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  test "User has a title, description, email and password hash" do
+  test "User has a title, username, description, email and password hash" do
 
     user = User.new
 
     assert_respond_to user, :title, "User does not have a title"
+    assert_respond_to user, :username, "User does not haave a username"
     assert_respond_to user, :description, "User does not have a description"
     assert_respond_to user, :email, "User does not have a email"
     assert_respond_to user, :password_hash, "User does not have a password_hash"
