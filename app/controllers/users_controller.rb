@@ -44,6 +44,8 @@ class UsersController < ApplicationController
     @user.avatar = params[:avatar] unless params[:avatar].nil?
     @user.cover = params[:cover] unless params[:cover].nil?
     @user.email = params[:email] unless params[:email].nil?
+    @user.title = params[:title] unless params[:title].nil?
+    @user.description = params[:description] unless params[:description].nil?
     @user.username = params[:username] unless params[:username].nil?
     @user.password = params[:password] unless params[:password].nil?
 
