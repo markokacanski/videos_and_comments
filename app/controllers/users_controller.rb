@@ -40,6 +40,9 @@ class UsersController < ApplicationController
     users_only # limit to logged in users
     @user = current_user
 
+
+    @user.avatar = params[:avatar] unless params[:avatar].nil?
+    @user.cover = params[:cover] unless params[:cover].nil?
     @user.email = params[:email] unless params[:email].nil?
     @user.username = params[:username] unless params[:username].nil?
     @user.password = params[:password] unless params[:password].nil?
@@ -50,7 +53,7 @@ class UsersController < ApplicationController
   end
 
   def register
-    
+    # just shows the registration page :)
   end
 
   def new_user

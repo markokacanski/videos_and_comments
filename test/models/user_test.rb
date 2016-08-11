@@ -35,8 +35,11 @@ class UserTest < ActiveSupport::TestCase
     assert @user.password_match(test_pw), "Password match must perform password check"
   end
 
-  test "User has an avatar" do
-    assert_respond_to @user, :avatar, "video has no file"
-    assert (@user.avatar.kind_of? Paperclip::Attachment), "video file is not a paperclip attachment"
+  test "User has an avatar and profile cover pic" do
+    assert_respond_to @user, :avatar, "avatar has no file"
+    assert (@user.avatar.kind_of? Paperclip::Attachment), "avatar file is not a paperclip attachment"
+
+    assert_respond_to @user, :cover, "cover has no file"
+    assert (@user.cover.kind_of? Paperclip::Attachment), "avatar file is not a paperclip attachment"
   end
 end
