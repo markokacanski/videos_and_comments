@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   # could not write a test for this - need to find a way to do it
   def users_only
     unless logged_in?
-      redirect_to(:sign_up)
+      redirect_to(:sign_in)
     end
   end
 

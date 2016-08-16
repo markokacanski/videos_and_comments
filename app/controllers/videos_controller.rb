@@ -1,6 +1,7 @@
 class VideosController < ApplicationController
   def new
-   @video = Video.new  
+    users_only
+    @video = Video.new  
   end
 
   def create

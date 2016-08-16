@@ -1,17 +1,7 @@
 class UsersControllerTest < ActionController::TestCase
 
   def setup
-    @user = User.new
-
-    @user.email = "onetwo@email.org"
-    @user.password = "secret"
-    @user.username = "testuser"
-
-    @user.save
-  end
-
-  def login(user)
-    session[:user_id] = user.id
+    @user = create_user(email: "onetwo@email.org", password: "secret", username: "testuser")
   end
 
   test "good login" do
