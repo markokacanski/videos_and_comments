@@ -5,6 +5,7 @@ class VideosController < ApplicationController
   end
 
   def create
+    users_only
     video = Video.new
 
     video.title = params[:video][:title]

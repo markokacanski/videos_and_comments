@@ -14,6 +14,7 @@ class VideosControllerTest < ActionController::TestCase
 
   test "should create video when given a video file" do
     file = test_file(filename: 'small_video.mp4', mimetype: "video/mp4")
+    login(@user)
 
     post :create, video: {file: file}
 
@@ -22,6 +23,12 @@ class VideosControllerTest < ActionController::TestCase
 
   test "should not allow visitors to upload videos, or reach new video page" do
     get :new
+
+    assert_redirected_to Rails.application.routes.url_helpers.sign_in_path
+
+    file = test_file(filename: 'small_video.mp4', mimetype: "video/mp4")
+
+    post :create, video: {file: file}
 
     assert_redirected_to Rails.application.routes.url_helpers.sign_in_path
 
