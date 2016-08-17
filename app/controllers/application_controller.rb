@@ -24,7 +24,10 @@ class ApplicationController < ActionController::Base
   def users_only
     unless logged_in?
       redirect_to(:sign_in)
+      return false
     end
+
+    return true
   end
 
 end

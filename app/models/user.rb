@@ -36,4 +36,6 @@ class User < ActiveRecord::Base
       return false
     end
   end
+
+  has_many :playlists
 end

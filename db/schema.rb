@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811152738) do
+ActiveRecord::Schema.define(version: 20160817103527) do
+
+  create_table "playlist_entries", force: :cascade do |t|
+    t.integer  "order"
+    t.integer  "video_id"
+    t.integer  "playlist_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.string   "name"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "title"
@@ -41,6 +56,7 @@ ActiveRecord::Schema.define(version: 20160811152738) do
     t.string   "video_file_content_type"
     t.integer  "video_file_file_size"
     t.datetime "video_file_updated_at"
+    t.integer  "user_id"
   end
 
 end

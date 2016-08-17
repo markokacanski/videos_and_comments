@@ -19,6 +19,8 @@ class VideosControllerTest < ActionController::TestCase
     post :create, video: {file: file}
 
     assert_response :success
+    assert_not_nil assigns(:video), "video should be available to the view" 
+    assert assigns(:video).user.id == @user.id, "video should belong to user who uploaded it"
   end
 
   test "should not allow visitors to upload videos, or reach new video page" do

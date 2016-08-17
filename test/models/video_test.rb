@@ -9,6 +9,10 @@ class VideoTest < ActiveSupport::TestCase
     @video = Video.new
   end
 
+  test "video belongs to the user" do
+    assert_respond_to @video, :user
+  end
+
   test "video has a title description and view count" do  
     assert_respond_to @video, :title, "video has no title"
     assert_respond_to @video, :view_count, "video has no view count"

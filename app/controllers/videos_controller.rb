@@ -5,14 +5,15 @@ class VideosController < ApplicationController
   end
 
   def create
-    users_only
-    video = Video.new
+    users_only or return
+    @video = Video.new
 
-    video.title = params[:video][:title]
-    video.description = params[:video][:description]
-    video.video_file = params[:video][:file]
+    @video.title = params[:video][:title]
+    @video.description = params[:video][:description]
+    @video.video_file = params[:video][:file]
+    @video.user = current_user
 
-    video.save
+    @video.save
   end
 
   def view

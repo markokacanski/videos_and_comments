@@ -11,4 +11,7 @@ class Video < ActiveRecord::Base
     content_type: {
       content_type: /^video\/(mp4|ogg|webm)/
     }
+
+
+  belongs_to :user
 end

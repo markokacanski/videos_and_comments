@@ -32,12 +32,12 @@ class UsersController < ApplicationController
   end
 
   def edit_profile
-    users_only
+    users_only or return
     @user = current_user
   end
 
   def save_profile
-    users_only # limit to logged in users
+    users_only or return
     @user = current_user
 
 
