@@ -11,14 +11,24 @@ class PlaylistsController < ApplicationController
 	def add_video
 		users_only or return
 
-		current_user.playlists.find(params[:playlist]).add_video(Video.find(params[:video]))
+		pl=current_user.playlists.find(params[:playlist])
+
+		pl.add_video(Video.find(params[:video]))
 
 
 		
 		# double logged in check because the redirect in users_only method does not
 		# halt the execution, hence redirect is called twice and its a no-no in Rails
 		if logged_in?
-			redirect_to 'videos/list'
+			redirect_to playlist_path(name: pl.name)
 		end		
+	end
+
+	def list
+		@playlists = current_user.playlists
+	end
+
+	def show
+		@plist = Playlist.find_by(name: params[:name])
 	end
 end

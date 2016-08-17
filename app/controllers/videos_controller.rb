@@ -20,6 +20,7 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
     @video.view_count += 1
     @video.save
+    @user = current_user
   end
 
   def list
