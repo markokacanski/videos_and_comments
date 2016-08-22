@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   post 'playlist/add_video' => 'playlists#add_video', as: :playlist_add_video
   get 'playlists' => 'playlists#list', as: :playlists
   get 'playlist/:name' => 'playlists#show', as: :playlist
+  post 'change_video_place/:playlist/:video/:new_place' => 'playlists#change_video_place', as: :change_video_place
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

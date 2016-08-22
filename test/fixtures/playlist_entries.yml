@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  order: 1
+  sequence: 1
   video_id: 1
   playlist_id: 1
 
 two:
-  order: 1
+  sequence: 1
   video_id: 1
   playlist_id: 1

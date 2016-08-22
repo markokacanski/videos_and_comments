@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817103527) do
+ActiveRecord::Schema.define(version: 20160822183512) do
 
   create_table "playlist_entries", force: :cascade do |t|
-    t.integer  "order"
+    t.integer  "sequence"
     t.integer  "video_id"
     t.integer  "playlist_id"
     t.datetime "created_at",  null: false
