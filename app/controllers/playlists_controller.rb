@@ -35,23 +35,14 @@ class PlaylistsController < ApplicationController
 	def change_video_place
 		users_only or return
 
-		pl = current_user.playlists.find(params[:playlist])
-		pe = pl.playlist_entries.find_by(video_id: params[:video])
+		plist = current_user.playlists.find(params[:playlist])
 
-		#get videos to move lower
-
-		entries_to_move = pl.playlist_entries.where("sequence >= ?", params[:new_place] )
-
-		entries_to_move.each do |entry|
-			entry.sequence = entry.sequence + 1
-			entry.save
+		if plist.move_video(params[:video], params[:new_place])
+			redirect_to playlist_path(plist.name)
+		else
+			return head(:forbidden)
 		end
 
-		#put requested vid at the requested place
-		pe.sequence = params[:new_place]
-		pe.save
-
-		redirect_to playlist_path(pl.name)
 	end
 
 end
