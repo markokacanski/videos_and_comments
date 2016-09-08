@@ -7,14 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<h1>Welcom to videos, please comment</h1>
-
-<ul>
-	<li><%= link_to "My profile", profile_path() %></li>
-	<li><%= link_to "My playlists", playlists_path() %></li>
-	<li>My videos</li>
-</ul>
+<header>
+	<h1>VidSite</h1>
+	<nav>
+		<a href="/users/sign_in">Login</a>
+	</nav>
+</header>
 
 <%= yield %>
 

@@ -26,4 +26,8 @@ class VideosController < ApplicationController
   def list
     @videos = Video.all
   end
+
+  def homepage
+    @latest_videos = Video.limit(10).order(created_at: :desc)
+  end
 end
