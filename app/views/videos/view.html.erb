@@ -17,9 +17,11 @@
 <p>Add to playlist:</p>
 
 <ul>
+<% if @user %>
 	<% @user.playlists.each do |plist| %>
 		<li><%= link_to plist.name, playlist_add_video_path(playlist: plist.id, video: @video.id), method: :post %></li>
 	<% end %>
+<% end %>
 </ul>
 
 
