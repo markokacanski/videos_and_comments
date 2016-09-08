@@ -7,4 +7,20 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  def login(user)
+    session[:user_id] = user.id
+  end
+
+  def create_user(args)
+  	user = User.new
+
+    user.email = args[:email]
+    user.password = args[:password]
+    user.username = args[:username]
+
+    user.save
+
+    return user
+  end
 end

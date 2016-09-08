@@ -1,5 +1,12 @@
 class VideosControllerTest < ActionController::TestCase
+  def setup
+    @user = create_user(email: "email@mail.com", password: "lol", username: "testtt")
+  end
+
+
   test "should get a new video page" do
+    login(@user)
+
     get :new
     assert_response :success
     assert_not_nil assigns(:video), "new video not assigned"
@@ -7,10 +14,26 @@ class VideosControllerTest < ActionController::TestCase
 
   test "should create video when given a video file" do
     file = test_file(filename: 'small_video.mp4', mimetype: "video/mp4")
+    login(@user)
 
     post :create, video: {file: file}
 
     assert_response :success
+    assert_not_nil assigns(:video), "video should be available to the view" 
+    assert assigns(:video).user.id == @user.id, "video should belong to user who uploaded it"
+  end
+
+  test "should not allow visitors to upload videos, or reach new video page" do
+    get :new
+
+    assert_redirected_to Rails.application.routes.url_helpers.sign_in_path
+
+    file = test_file(filename: 'small_video.mp4', mimetype: "video/mp4")
+
+    post :create, video: {file: file}
+
+    assert_redirected_to Rails.application.routes.url_helpers.sign_in_path
+
   end
 
   test "it should show the video view page" do

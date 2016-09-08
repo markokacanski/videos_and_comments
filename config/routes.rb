@@ -11,7 +11,21 @@ Rails.application.routes.draw do
   get 'videos/new' => 'videos#new'
   post 'videos/create' => 'videos#create'
   get 'videos/view/:id' => 'videos#view', as: :video_view
-  get 'videos/list' => 'videos#list'
+  get 'videos/list' => 'videos#list', as: :video_list
+
+  post 'users/login' => 'users#login', as: :login
+  get 'users/sign_in' => 'users#sign_in', as: :sign_in
+  get 'users/logout' => 'users#logout', as: :logout
+  get 'profile/(:username)' => 'users#profile', as: :profile
+  post 'profile/save' => 'users#save_profile', as: :save_profile
+  get 'edit_profile' => 'users#edit_profile', as: :edit_profile
+  get 'register' => 'users#register', as: :register
+  post 'new_user' => 'users#new_user', as: :new_user
+  post 'playlist/new' => 'playlists#new', as: :new_playlist
+  post 'playlist/add_video' => 'playlists#add_video', as: :playlist_add_video
+  get 'playlists' => 'playlists#list', as: :playlists
+  get 'playlist/:name' => 'playlists#show', as: :playlist
+  post 'change_video_place/:playlist/:video/:new_place' => 'playlists#change_video_place', as: :change_video_place
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sequence: 1
+  video_id: 1
+  playlist_id: 1
+
+two:
+  sequence: 1
+  video_id: 1
+  playlist_id: 1

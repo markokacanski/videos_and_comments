@@ -1,0 +1,26 @@
+<h1>Edit your profile</h1>
+<form action="profile/save" method="post" enctype="multipart/form-data">
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+	<label for="avatar">Your avatar image:</label>
+	<input type="file" name="avatar" id="avatar">
+
+	<label for="cover">Your profile cover image:</label>
+	<input type="file" name="cover" id="cover">
+	
+	<label for="email">email:</label>
+	<input type="text" name="email" id="email" value="<%= @user.email %>">
+	
+	<label for="username">username:</label>
+	<input type="text" name="username" id="username" value="<%= @user.username  %>">
+	
+	<label for="title">title:</label>
+	<input type="text" name="title" id="title" value="<%= @user.title  %>">
+	
+	<label for="description">description:</label>
+	<input type="text" name="description" id="description" value="<%= @user.description  %>">
+	
+	<label for="pass">password:</label>
+	<input type="password" name="password" id="password">
+	
+	<input type="submit">
+</form>
