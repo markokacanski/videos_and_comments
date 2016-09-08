@@ -1,0 +1,20 @@
+body{
+	>header{
+		h1 {
+			display: inline;
+			float: left;
+			font-size: 1em;
+		}
+
+		nav {
+			display: inline;
+			float: right;
+		}
+
+		&:after {
+    	content: "";
+    	display: table;
+    	clear: both;
+  	}
+	}
+}

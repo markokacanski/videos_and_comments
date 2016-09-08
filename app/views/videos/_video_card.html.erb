@@ -1,0 +1,7 @@
+<%= link_to video_view_path(video.id) do %>
+	<section class="video_card">
+		<h2><%= video.title %></h2>
+		<%=image_tag(video.video_file.url(:thumbnail)) %>
+		<p><%= video.description %></p>
+	</section>
+<% end %>

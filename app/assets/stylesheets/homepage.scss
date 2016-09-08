@@ -1,0 +1,23 @@
+main#homepage {
+	header{
+		max-width: 960px;
+		margin: auto;
+		height: 400px;
+		background-color: pink;
+	}
+
+	section#latest_videos{
+		// width: 95%;
+		margin: 1%;
+
+		h1{
+			margin-left: 1%;
+		}
+
+		&:after {
+    	content: "";
+    	display: table;
+    	clear: both;
+  	}
+	}
+}

@@ -1,0 +1,23 @@
+section.video_card{
+	display: inline-block;
+	margin-left: 1%;
+	float: left;
+
+	//background-color: pink;
+	&:hover{
+		background-color: silver;
+	}
+
+	img {
+	}
+
+	h2{
+		font-size: 1em;
+		margin: 1%;
+		color: black;
+	}
+
+	p {
+		color: black;
+	}
+}

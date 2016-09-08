@@ -1,0 +1,13 @@
+<main id="homepage">
+	<header>
+		<h1>VidSite</h1>
+		<p>It's awesome!</p>
+	</header>
+
+	<section id="latest_videos">
+		<h1>Latest videos:</h1>
+		<% @latest_videos.each do |video| %>
+			<%= render "video_card", video: video %>
+		<% end %>
+	</section>
+</main>
