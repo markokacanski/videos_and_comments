@@ -32,6 +32,9 @@ gem "streamio-ffmpeg"
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+# Use Thin as the the app server
+gem 'thin'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
