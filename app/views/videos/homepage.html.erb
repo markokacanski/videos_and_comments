@@ -1,11 +1,13 @@
 <main id="homepage">
 	<header>
 		<h1>VidSite</h1>
-		<p>It's awesome!</p>
+		<em>HTML5</em>
+		<p>mobile device compatible</p>
+		<p>no flash</p>
 	</header>
 
 	<section id="latest_videos">
-		<h1>Latest videos:</h1>
+		<h2>Latest videos:</h2>
 		<% @latest_videos.each do |video| %>
 			<%= render "video_card", video: video %>
 		<% end %>
