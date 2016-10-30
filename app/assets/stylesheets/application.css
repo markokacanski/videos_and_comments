@@ -10,8 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require homepage
+ *= require main_bar
+ *= require video-js
+ *= require videos/video_card
  */
 
  /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -87,5 +90,5 @@
 
  a, a:visited, a:hover, a:active {
      text-decoration: none;
-     color: inherit;
+     /*color: inherit;*/
  }

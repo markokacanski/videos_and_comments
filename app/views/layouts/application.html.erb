@@ -5,13 +5,21 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
 </head>
 <body>
 <header>
-	<h1>VidSite</h1>
-	<nav>
-		<a href="/users/sign_in">Login</a>
+  <nav>
+    <div id="site_sections">
+      <a href="/">Home</a>
+      <a href="/">Newest</a>
+      <a href="/">Reccomended</a>
+      <a href="/">About</a>
+    </div>
+
+    <div id="user_profile">
+      <a href="/users/sign_in">Login</a>
+    </div>
 	</nav>
 </header>
 

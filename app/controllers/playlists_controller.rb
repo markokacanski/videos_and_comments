@@ -34,7 +34,6 @@ class PlaylistsController < ApplicationController
 
 	def change_video_place
 		users_only or return
-
 		plist = current_user.playlists.find(params[:playlist])
 
 		if plist.move_video(params[:video], params[:new_place])
