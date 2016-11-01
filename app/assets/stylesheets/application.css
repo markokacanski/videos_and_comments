@@ -13,6 +13,7 @@
  *= require_self
  *= require homepage
  *= require main_bar
+ *= require view_video
  *= require video-js
  *= require videos/video_card
  */
@@ -69,22 +70,41 @@
 
 
 /* Global styles for VidSite */
- body {
-	margin: 0;
-	font-size: 1.2vw;
-	background-color: #eeeeee;
-	font-family: sans-serif;
- }
 
- @media screen and (max-width: 700px) {
+body {
+  margin: 0;
+  background-color: #eeeeee;
+  font-family: sans-serif;
+}
+
+@media screen and (min-width: 1200px){
+  body{
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  body{
+    font-size: 1.7vw;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  body{
+    font-size: 2vw;
+  } 
+}
+
+
+ @media screen and (max-width: 768px) {
  	body {
- 		font-size: 2vw;
+ 		font-size: 2.3vw;
  	}
  }
 
  @media screen and (max-width: 350px) {
  	body {
- 		font-size: 3vw;
+ 		font-size: 4vw;
  	}
  }
 
