@@ -1,27 +1,142 @@
-<h1>Lol</h1>
+<main id="view_video">
 
-<video id="video" class="video-js" controls preload="auto" width="640" height="264" data-setup="{}">
+  <section id="video_area">
+    <video id="video" class="video-js" controls preload="auto" data-setup="{}">
+      
+      <source src="<%= @video.video_file.url %>" type="video/webm">
+
+       <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a web browser that
+          <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        </p>
+    </video>
+  </section>
+
+  <section id="additional_content">
+    <section id="details">
+      <div id="basic_info">
+        <h1>Lol</h1>
+        <p>by Marko Kacanski</p>
+      </div>
+
+      <div id="stats">
+        <p>
+          watched <em><%= @video.view_count %></em> times
+        </p>
+      </div>
+
+      <div id="description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+    </section>
+
+    <section id="comments">
+      <h2>Comments:</h2>
+      <div class="comment">
+        <h4>Anonymous:</h4>
+        <p>
+          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        </p>
+      </div>
+
+      <div class="comment">
+        <h4>Anonymous:</h4>
+        <p>
+          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        </p>
+      </div>
+
+      <div class="comment">
+        <h4>Anonymous:</h4>
+        <p>
+          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        </p>
+      </div>
+
+      <div class="comment">
+        <h4>Anonymous:</h4>
+        <p>
+          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        </p>
+      </div>
+
+      <div class="comment">
+        <h4>Anonymous:</h4>
+        <p>
+          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        </p>
+      </div>
+
+      <div class="comment">
+        <h4>Anonymous:</h4>
+        <p>
+          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        </p>
+      </div>
+
+      <div class="comment">
+        <h4>Anonymous:</h4>
+        <p>
+          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        </p>
+      </div>
+
+      <div class="comment">
+        <h4>Anonymous:</h4>
+        <p>
+          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        </p>
+      </div>
+
+      <div class="comment">
+        <h4>Anonymous:</h4>
+        <p>
+          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        </p>
+      </div>
+    </section>
+  </section>
+
   
-  <source src="<%= @video.video_file.url %>" type="video/webm">
 
-   <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a web browser that
-      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-    </p>
-</video>
+  <section id="related_videos">
+    <% @related_videos.each do |video| %>
+      <%= render "video_card", video: video %>
+    <% end %>
+  </section>
 
-<p>
-  watched <em><%= @video.view_count %></em> times
-</p>
+  
 
-<p>Add to playlist:</p>
-
-<ul>
-<% if @user %>
-	<% @user.playlists.each do |plist| %>
-		<li><%= link_to plist.name, playlist_add_video_path(playlist: plist.id, video: @video.id), method: :post %></li>
-	<% end %>
-<% end %>
-</ul>
-
+  <ul>
+  <% if @user %>
+    <p>Add to playlist:</p>
+  	<% @user.playlists.each do |plist| %>
+  		<li><%= link_to plist.name, playlist_add_video_path(playlist: plist.id, video: @video.id), method: :post %></li>
+  	<% end %>
+  <% end %>
+  </ul>
+</main>
 
