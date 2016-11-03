@@ -28,6 +28,11 @@ main#view_video{
 
   #additional_content{
     width: 70%;
+    margin-bottom: 2em;
+    @media screen and (max-width: 350px) {
+      width: 90%;
+      margin-left: 5%;
+    } 
     justify-content: space-between;
     flex-wrap: wrap;
     float: left;
@@ -58,6 +63,7 @@ main#view_video{
 
         p{
           font-size: 0.7em;
+          margin-top: 0.7em;
         }
       }
     }
@@ -97,6 +103,10 @@ main#view_video{
 
   section#related_videos{
     width: 20%;
+    @media screen and (max-width: 350px){
+      width: 90%;
+      margin-left: 5%;
+    }
     flex-wrap: wrap;
     float: left;
     .video_card{
