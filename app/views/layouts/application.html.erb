@@ -5,16 +5,23 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
 </head>
 <body>
+<header>
+  <nav>
+    <div id="site_sections">
+      <a href="/">Home</a>
+      <a href="/">Newest</a>
+      <a href="/">Reccomended</a>
+      <a href="/">About</a>
+    </div>
 
-<h1>Welcom to videos, please comment</h1>
-
-<ul>
-	<li><%= link_to "My profile", profile_path() %></li>
-	<li><%= link_to "My playlists", playlists_path() %></li>
-	<li>My videos</li>
-</ul>
+    <div id="user_profile">
+      <a href="/users/sign_in">Login</a>
+    </div>
+	</nav>
+</header>
 
 <%= yield %>
 

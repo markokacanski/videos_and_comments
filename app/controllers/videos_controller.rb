@@ -21,9 +21,15 @@ class VideosController < ApplicationController
     @video.view_count += 1
     @video.save
     @user = current_user
+
+    @related_videos = Video.all
   end
 
   def list
     @videos = Video.all
+  end
+
+  def homepage
+    @latest_videos = Video.all
   end
 end
