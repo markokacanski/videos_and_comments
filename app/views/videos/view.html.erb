@@ -15,8 +15,10 @@
   <section id="additional_content">
     <section id="details">
       <div id="basic_info">
-        <h1>Lol</h1>
-        <p>by Marko Kacanski</p>
+        <h1><%= @video.title %></h1>
+        <p>
+          by: <%= @video.user.email %>
+        </p>
       </div>
 
       <div id="stats">
@@ -26,101 +28,14 @@
       </div>
 
       <div id="description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <%= @video.description %>
       </div>
     </section>
+    
+    <%= render "comments/comment_section" %> 
 
-    <section id="comments">
-      <h2>Comments:</h2>
-      <div class="comment">
-        <h4>Anonymous:</h4>
-        <p>
-          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        </p>
-      </div>
-
-      <div class="comment">
-        <h4>Anonymous:</h4>
-        <p>
-          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        </p>
-      </div>
-
-      <div class="comment">
-        <h4>Anonymous:</h4>
-        <p>
-          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        </p>
-      </div>
-
-      <div class="comment">
-        <h4>Anonymous:</h4>
-        <p>
-          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        </p>
-      </div>
-
-      <div class="comment">
-        <h4>Anonymous:</h4>
-        <p>
-          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        </p>
-      </div>
-
-      <div class="comment">
-        <h4>Anonymous:</h4>
-        <p>
-          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        </p>
-      </div>
-
-      <div class="comment">
-        <h4>Anonymous:</h4>
-        <p>
-          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        </p>
-      </div>
-
-      <div class="comment">
-        <h4>Anonymous:</h4>
-        <p>
-          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        </p>
-      </div>
-
-      <div class="comment">
-        <h4>Anonymous:</h4>
-        <p>
-          ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        </p>
-      </div>
-    </section>
   </section>
 
-  
 
   <section id="related_videos">
     <% @related_videos.each do |video| %>
