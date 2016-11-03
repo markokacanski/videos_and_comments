@@ -38,4 +38,5 @@ class User < ActiveRecord::Base
   end
 
   has_many :playlists
+  has_many :videos
 end

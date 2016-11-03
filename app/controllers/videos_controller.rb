@@ -22,7 +22,7 @@ class VideosController < ApplicationController
     @video.save
     @user = current_user
 
-    @related_videos = Video.all
+    @related_videos = @video.user.videos
   end
 
   def list
